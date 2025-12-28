@@ -27,6 +27,7 @@ The goal was to build an event-driven monitoring and auto-remediation workflow u
 
 **I — Implementation**
 1️⃣ EC2 Environment
+<img width="1920" height="1200" alt="Screenshot 2025-12-28 103309" src="https://github.com/user-attachments/assets/02c5d8b3-c1bf-4b66-aab5-d4938e051ebf" />
 
 Two EC2 instances were launched to simulate separate environments:
 
@@ -47,6 +48,7 @@ Instance-level monitoring enabled
 Mirrors real production architecture
 
 2️⃣ **CloudWatch CPU Alarm Configuration**
+<img width="1920" height="1200" alt="Screenshot 2025-12-28 114421" src="https://github.com/user-attachments/assets/b6db61c9-5551-4572-8515-06e90f7e46d0" />
 
 A CloudWatch alarm was configured on the Dev EC2 instance with the following settings:
 
@@ -73,6 +75,7 @@ Fast detection configuration
 Manual alarm setup (not default)
 
 3️⃣ **Alarm Triggered — High CPU Detected**
+<img width="1920" height="1200" alt="Screenshot 2025-12-28 123701" src="https://github.com/user-attachments/assets/41930678-68e1-47e3-a943-f9af5be56b96" />
 
 The CloudWatch alarm successfully transitioned to the IN ALARM state after CPU usage exceeded the threshold.
 
@@ -87,6 +90,7 @@ Monitoring was validated, not assumed
 This is real operational data
 
 4️⃣ **Automated Remediation with AWS Lambda**
+<img width="1920" height="1200" alt="Screenshot 2025-12-28 121956" src="https://github.com/user-attachments/assets/5bb465a3-88de-4ef7-ba7a-075e0be7a057" />
 
 When the alarm fired:
 
@@ -121,6 +125,7 @@ Production-style remediation logic
 No manual SSH intervention required
 
 5️⃣ **Security Detection with Amazon GuardDuty**
+<img width="1920" height="1200" alt="Screenshot 2025-12-28 130834" src="https://github.com/user-attachments/assets/c0fb563e-1f02-45d1-bccc-0e7fb213f197" />
 
 Amazon GuardDuty detected outbound port scanning activity from the EC2 instance.
 
