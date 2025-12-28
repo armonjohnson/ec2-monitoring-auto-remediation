@@ -1,7 +1,7 @@
 **EC2 Proactive Monitoring & Auto-Remediation on AWS**
 
 
-B — Background
+**B — Background**
 
 Modern cloud environments require continuous monitoring, rapid detection, and automated remediation to maintain reliability and security.
 
@@ -9,7 +9,7 @@ Manually logging into servers after an issue occurs does not scale and increases
 
 The focus of this project is not application code, but infrastructure observability, automation, and incident response.
 
-U — Understanding the Problem
+**U — Understanding the Problem**
 
 This project addresses common operational challenges faced by Cloud Support and DevOps engineers:
 
@@ -25,7 +25,7 @@ How do you surface security findings in real time?
 
 The goal was to build an event-driven monitoring and auto-remediation workflow using AWS-managed services.
 
-I — Implementation
+**I — Implementation**
 1️⃣ EC2 Environment
 
 Two EC2 instances were launched to simulate separate environments:
@@ -46,7 +46,7 @@ Instance-level monitoring enabled
 
 Mirrors real production architecture
 
-2️⃣ CloudWatch CPU Alarm Configuration
+2️⃣ **CloudWatch CPU Alarm Configuration**
 
 A CloudWatch alarm was configured on the Dev EC2 instance with the following settings:
 
@@ -72,7 +72,7 @@ Fast detection configuration
 
 Manual alarm setup (not default)
 
-3️⃣ Alarm Triggered — High CPU Detected
+3️⃣ **Alarm Triggered — High CPU Detected**
 
 The CloudWatch alarm successfully transitioned to the IN ALARM state after CPU usage exceeded the threshold.
 
@@ -86,7 +86,7 @@ Monitoring was validated, not assumed
 
 This is real operational data
 
-4️⃣ Automated Remediation with AWS Lambda
+4️⃣ **Automated Remediation with AWS Lambda**
 
 When the alarm fired:
 
@@ -120,7 +120,7 @@ Production-style remediation logic
 
 No manual SSH intervention required
 
-5️⃣ Security Detection with Amazon GuardDuty
+5️⃣ **Security Detection with Amazon GuardDuty**
 
 Amazon GuardDuty detected outbound port scanning activity from the EC2 instance.
 
@@ -142,8 +142,8 @@ Awareness of infrastructure security risks
 
 Alignment with SOC / cloud security workflows
 
-L — Learning & Outcomes
-Skills Demonstrated
+L — **Learning & Outcomes
+Skills Demonstrated**
 
 ✅ EC2 monitoring with CloudWatch
 
