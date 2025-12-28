@@ -6,7 +6,7 @@ Modern cloud environments require continuous monitoring, rapid detection, and au
 
 Manually logging into servers after an issue occurs does not scale and increases recovery time. This project was built to simulate a real-world AWS production environment where infrastructure issues are detected and handled automatically using native AWS services.
 
-The focus is not application code, but infrastructure observability, automation, and incident response.
+The focus of this project is not application code, but infrastructure observability, automation, and incident response.
 
 U — Understanding the Problem
 
@@ -35,19 +35,19 @@ Prod-Server
 
 Both instances are running and actively monitored in the us-east-1 region.
 
-What your EC2 screenshot proves
+What this proves
 
-Multiple environments exist (not a single test box)
+Multiple environments (not a single test instance)
 
-Instances are running and reachable
+Realistic Dev / Prod separation
 
-Monitoring is applied at the instance level
+Instance-level monitoring enabled
 
-This mirrors real Dev / Prod separation
+Mirrors real production architecture
 
 2️⃣ CloudWatch CPU Alarm Configuration
 
-A CloudWatch alarm was configured on the Dev EC2 instance using the following settings:
+A CloudWatch alarm was configured on the Dev EC2 instance with the following settings:
 
 Metric: CPUUtilization
 
@@ -61,21 +61,21 @@ Threshold: ≥ 85%
 
 Evaluation: 1 datapoint
 
-What your CloudWatch alarm setup screenshot proves
+What this proves
 
-You understand EC2 metrics
+Proper metric selection
 
-You selected realistic production thresholds
+Realistic alert thresholds
 
-Short evaluation periods enable fast detection
+Fast detection configuration
 
-Alarm configuration was done manually (not auto-generated)
+Manual alarm setup (not default)
 
 3️⃣ Alarm Triggered — High CPU Detected
 
-The CloudWatch alarm entered the IN ALARM state after CPU usage exceeded the defined threshold.
+The CloudWatch alarm successfully transitioned to the IN ALARM state after CPU usage exceeded the threshold.
 
-What the alarm graph screenshot proves
+What this proves
 
 CPU was intentionally stressed
 
@@ -83,7 +83,7 @@ Alarm logic works end-to-end
 
 Monitoring was validated, not assumed
 
-This is real signal, not hypothetical configuration
+This is real operational data
 
 4️⃣ Automated Remediation with AWS Lambda
 
@@ -93,90 +93,88 @@ CloudWatch published the alarm to SNS
 
 SNS triggered a Lambda function
 
-Lambda parsed the SNS message
+Lambda parsed the alarm payload
 
-The EC2 Instance ID was extracted from alarm dimensions
+EC2 Instance ID was extracted
 
 Remediation logic executed automatically
 
-The Lambda function was written in Python and includes logic to:
+The Lambda function (Python) handles:
 
-Handle CloudWatch alarm payloads
+SNS event parsing
 
-Parse EC2 Instance IDs
+CloudWatch alarm formats
 
-Support multiple metric dimension formats
+EC2 dimension extraction
 
-Log events for debugging and traceability
+Debug logging for traceability
 
-What your Lambda code screenshot proves
+What this proves
 
-You understand event-driven automation
+Event-driven automation knowledge
 
-You can parse CloudWatch + SNS payloads
+Real alarm payload handling
 
-You handled real-world alarm formats
+Production-style remediation logic
 
-This is operational automation, not a toy script
+No manual SSH intervention required
 
 5️⃣ Security Detection with Amazon GuardDuty
 
-Amazon GuardDuty detected outbound port scanning activity originating from the monitored EC2 instance.
+Amazon GuardDuty detected outbound port scanning activity from the EC2 instance.
 
-Finding details:
+Finding details
 
 Type: Recon:EC2/Portscan
 
 Severity: Medium
 
-Resource: EC2 instance
-
 Region: us-east-1
 
-What your GuardDuty screenshot proves
+What this proves
 
-Security monitoring is enabled
+Security monitoring enabled
 
 Findings are real, not simulated
 
-You understand that performance issues and security events are related
+Awareness of infrastructure security risks
 
-This reflects real SOC / cloud security workflows
+Alignment with SOC / cloud security workflows
 
 L — Learning & Outcomes
 Skills Demonstrated
 
 ✅ EC2 monitoring with CloudWatch
 
-✅ Alarm-based alerting with real thresholds
+✅ Alarm-based alerting
 
-✅ Event-driven automation using SNS + Lambda
+✅ SNS-driven automation
+
+✅ Lambda auto-remediation
 
 ✅ Parsing CloudWatch alarm payloads
 
-✅ IAM-aware remediation logic
+✅ IAM-aware automation
 
-✅ Real-time security detection with GuardDuty
-
-✅ Validation through triggered alarms and findings
+✅ Security visibility with GuardDuty
 
 Key Takeaways
 
-Monitoring without automation is incomplete
+Monitoring alone is not enough
 
 Alarms must be tested, not just configured
 
-Event-driven remediation reduces MTTR
+Automation reduces recovery time
 
-Security findings are part of infrastructure reliability
+Performance and security are connected
 
-AWS-native tools can fully automate incident response
+AWS-native tools can fully automate response workflows
 
 Why This Project Matters
 
-This project demonstrates real cloud engineering practices, not just configuration knowledge.
+This project demonstrates real production cloud engineering practices, not just configuration.
 
-It aligns directly with responsibilities of:
+It directly aligns with roles such as:
 
 Cloud Support Engineer
 
@@ -184,11 +182,11 @@ DevOps Engineer
 
 AWS Solutions Architect
 
-It proves hands-on experience with monitoring, automation, remediation, and security visibility in AWS.
+It proves hands-on experience with monitoring, automation, remediation, and security detection in AWS.
 
 Author
 
 Armon Johnson
 Cloud / DevOps Engineer in Progress ☁️🚀
 
-⭐ If you found this project useful, feel free to star the repository.
+⭐ If you found this project useful, feel free to star the repository!
