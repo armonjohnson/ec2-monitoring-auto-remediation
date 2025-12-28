@@ -1,5 +1,6 @@
 **EC2 Proactive Monitoring & Auto-Remediation on AWS**
-BUILD Format Project README
+
+
 B — Background
 
 Modern cloud environments require continuous monitoring, rapid detection, and automated remediation to maintain reliability and security.
