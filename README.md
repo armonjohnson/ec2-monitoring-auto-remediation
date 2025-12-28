@@ -1,4 +1,4 @@
-EC2 Proactive Monitoring & Auto-Remediation on AWS
+**EC2 Proactive Monitoring & Auto-Remediation on AWS**
 BUILD Format Project README
 B — Background
 
